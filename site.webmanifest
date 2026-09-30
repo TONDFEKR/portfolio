@@ -3,7 +3,7 @@
   "short_name": "Reza T.",
   "icons": [
     { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
-    { "src": "assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
   ],
   "theme_color": "#2F4BD8",
   "background_color": "#F6F4EE",

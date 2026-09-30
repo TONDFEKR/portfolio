@@ -16,7 +16,7 @@
             title: 'Victoria University',
             role: 'Senior Learning Designer',
             meta: 'Melbourne, VIC · Dec 2025 – Present',
-            image: 'assets/img/vu.svg',
+            image: 'vu.svg',
             tldr: 'I help course teams redesign assessment so that it is authentic, sustainable, progressive and aligned with University standards and TEQSA requirements.',
             context: 'Assessment has to do a lot: evidence learning outcomes, build employability skills and meet University and regulatory standards. Through the Assessment Refresh Project (ARP), I work with unit teams to redesign assessment so that it does all of this well.',
             contributions: [
@@ -37,7 +37,7 @@
             title: 'NeuroAIQ',
             role: 'AI & Technology Enablement Specialist',
             meta: 'Melbourne, VIC · Nov 2025 – Present',
-            image: 'assets/img/neuroaiq.svg',
+            image: 'neuroaiq.svg',
             tldr: 'I help organisations adopt AI confidently, blending behavioural science with practical digital upskilling.',
             context: 'Many teams have access to AI tools but lack the confidence, habits and workflows to use them well. Adoption is as much a human challenge as a technical one.',
             contributions: [
@@ -57,7 +57,7 @@
             title: 'Alcazar Learning',
             role: 'Senior Learning Experience Designer | Ed Technologist',
             meta: 'Melbourne (Hybrid) · 2023 – 2025',
-            image: 'assets/img/alcazar-400.webp',
+            image: 'alcazar-400.webp',
             tldr: 'I led the research and development of gamified, multimedia-rich digital modules that build professional and interpersonal skills.',
             context: 'Professional and interpersonal skills are hard to teach online. Learners need practice, motivation and relevance, not just content.',
             contributions: [
@@ -80,7 +80,7 @@
             title: 'Peter MacCallum Cancer Centre',
             role: 'Instructional Designer, Genomics Education',
             meta: 'Melbourne (Hybrid) · 2022 – 2023',
-            image: 'assets/img/petermac-400.webp',
+            image: 'petermac-400.webp',
             tldr: 'I designed online genomics programs that made complex cancer science accessible for medical scientists and pathologists.',
             context: 'Genomic medicine is changing cancer care quickly. Busy clinicians and scientists need accurate, up-to-date learning that respects their expertise and their time.',
             contributions: [
@@ -102,7 +102,7 @@
             title: 'Monash University',
             role: 'Educational Designer / Educational Support Officer',
             meta: 'Melbourne (Hybrid) · 2019 – 2021',
-            image: 'assets/img/monash-400.webp',
+            image: 'monash-400.webp',
             tldr: 'I built accessible online modules in neuroscience, bioinformatics and immunology with academics and clinicians.',
             context: 'Health and science students come with diverse backgrounds and needs. Technical content has to be accurate and also accessible to everyone.',
             contributions: [
@@ -124,7 +124,7 @@
             title: 'The Florey Institute',
             role: 'PhD, Neuroscience & Neurochemistry (University of Melbourne)',
             meta: 'Melbourne · 2016 – 2021',
-            image: 'assets/img/florey-400.webp',
+            image: 'florey-400.webp',
             tldr: 'My doctoral research on brain function is the scientific foundation of my evidence-based approach to learning design.',
             context: 'I completed my PhD in Neuroscience and Neurochemistry through the University of Melbourne, researching at The Florey Institute of Neuroscience and Mental Health.',
             contributions: [

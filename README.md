@@ -14,22 +14,23 @@ The site uses a "modern retro" pixel-art style and includes **optional micro-que
 - No frameworks and no build step: plain HTML, CSS and JS
 
 ## Structure
+All files sit in one folder (no subfolders), so the site uploads to GitHub in one drag-and-drop.
 ```
-index.html            Main page
-404.html              Custom "not found" page (used automatically by GitHub Pages)
-css/style.css         All styles (design tokens at the top)
-js/script.js          Case-study content, quests, theme, menu
-assets/img/           Optimised pixel-art images (WebP + SVG)
-assets/og-image.png   Social share preview (1200x630)
-assets/Reza_Tondfekr_CV.pdf
-favicon.svg, site.webmanifest, .nojekyll
+index.html      Main page
+404.html        Custom "not found" page
+style.css       All styles (design tokens at the top)
+script.js       Case-study content, quests, theme, menu
+*.webp, *.svg   Optimised pixel-art images
+og-image.png    Social share preview (1200x630)
+Reza_Tondfekr_CV.pdf
+favicon.svg, apple-touch-icon.png, site.webmanifest
 ```
 
 ## Editing content
-- **Case studies and quests:** edit the `projects` array at the top of `js/script.js`.
+- **Case studies and quests:** edit the `projects` array at the top of `script.js`.
 - **Timeline, skills, certifications:** edit the matching sections in `index.html`.
-- **Colours and fonts:** edit the CSS variables at the top of `css/style.css`.
-- **CV:** replace `assets/Reza_Tondfekr_CV.pdf`, keeping the same file name.
+- **Colours and fonts:** edit the CSS variables at the top of `style.css`.
+- **CV:** replace `Reza_Tondfekr_CV.pdf`, keeping the same file name.
 
 ## Run locally
 Open `index.html` in a browser, or serve the folder:
