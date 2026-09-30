@@ -1,369 +1,445 @@
-// Project data with challenges
-const projects = [
-    {
-        title: "Alcazar Learning",
-        category: "AI Powered Learning Solutions",
-        image: "Alcazar Learning.png",
-        description: "Led research and user experience design of AI powered mobile and web applications that create adaptive and data driven learning. Collaborated with cross functional teams to build scalable platforms focused on professional and job market skill sets. Designed strategies for personalised content delivery, learner engagement and optimisation through research, technology and data.",
-        technologies: ["Mobile & Web Development", "AI/ML Integration in Education", "Data Analysis for Learning Impact", "Content Creation & Curriculum Design", "EdTech Solutions, Gamification, Multimedia"],
-        challenge: {
-            question: "What's the #1 most in-demand skill according to 1.5M jobs on LinkedIn/Seek 2024?",
-            options: ["Project Management", "Time Management", "Communication"],
-            correct: 2,
-            xp: 25
+/* ==========================================================================
+   Reza Tondfekr, Portfolio scripts
+   - Case-study dialog
+   - Optional micro-quests (XP saved in localStorage)
+   - Theme toggle, mobile menu, active nav link
+   ========================================================================== */
+
+(function () {
+    'use strict';
+
+    /* ---------- Content ----------
+       Edit case studies here. Each quest uses a real learning-science idea
+       and gives explanatory feedback on every answer. */
+    const projects = [
+        {
+            title: 'Victoria University',
+            role: 'Senior Learning Designer',
+            meta: 'Melbourne, VIC · Dec 2025 – Present',
+            image: 'assets/img/vu.svg',
+            tldr: 'I help course teams redesign assessment so that it is authentic, sustainable, progressive and aligned with University standards and TEQSA requirements.',
+            context: 'Assessment has to do a lot: evidence learning outcomes, build employability skills and meet University and regulatory standards. Through the Assessment Refresh Project (ARP), I work with unit teams to redesign assessment so that it does all of this well.',
+            contributions: [
+                'Partner with course teams and unit convenors to review and redesign unit assessments under the ARP.',
+                'Map learning outcomes and employability skills, and document assessment architecture against VU Assessment Standards, TEQSA requirements and the ARP framework.',
+                'Facilitate design workshops that build authentic, sustainable and progressive assessment practice.'
+            ],
+            approach: ['Constructive alignment', 'Outcome mapping', 'Authentic assessment', 'Employability skills mapping', 'Co-design workshops'],
+            quest: {
+                question: 'Which principle makes sure that learning outcomes, learning activities and assessment all point in the same direction?',
+                options: ['Constructive alignment', 'Spaced repetition', 'Learning styles'],
+                correct: 0,
+                why: 'Constructive alignment (John Biggs) starts from what students should be able to do. Activities and assessment are then designed to develop and evidence exactly that.',
+                hint: 'Think about the alignment between what we intend students to learn and how we check it.'
+            }
         },
-        link: "#"
-    },
-    {
-        title: "Peter MacCallum Cancer Centre",
-        category: "Medical Genomics Education",
-        image: "PeterMac.png",
-        description: "Designed and developed interactive online programs for medical scientists and pathologists, translating complex genomic concepts into accessible, engaging learning. Collaborated with medical experts to curate high quality content and fostered interactive sessions that improved knowledge retention and learner engagement.",
-        technologies: ["Genomics & Medical Education", "Instructional Design & E-Learning", "UX for Learning Programs", "Content Strategy in Healthcare Education"],
-        challenge: {
-            question: "What's the main challenge in teaching genomics?",
-            options: ["Technical complexity", "Lack of interest", "Limited resources"],
-            correct: 0,
-            xp: 25
+        {
+            title: 'NeuroAIQ',
+            role: 'AI & Technology Enablement Specialist',
+            meta: 'Melbourne, VIC · Nov 2025 – Present',
+            image: 'assets/img/neuroaiq.svg',
+            tldr: 'I help organisations adopt AI confidently, blending behavioural science with practical digital upskilling.',
+            context: 'Many teams have access to AI tools but lack the confidence, habits and workflows to use them well. Adoption is as much a human challenge as a technical one.',
+            contributions: [
+                'Support AI adoption and digital-transformation initiatives across cross-functional teams.',
+                'Contribute to the planning and design of client programs focused on AI integration, behavioural science and digital upskilling.'
+            ],
+            approach: ['AI integration', 'Behavioural science', 'Change enablement', 'Digital upskilling', 'Program design'],
+            quest: {
+                question: 'Behavioural science says the single most reliable way to help a new habit (like using an AI tool) stick is to…',
+                options: ['Send more reminder emails', 'Make it easy and build it into existing routines', 'Explain the theory in more detail'],
+                correct: 1,
+                why: 'The Behavioural Insights Team\'s EAST framework starts with "Make it Easy". Removing friction and attaching the new behaviour to existing routines beats information alone.',
+                hint: 'Friction is the enemy of a new behaviour.'
+            }
         },
-        link: "#"
-    },
-    {
-        title: "The Florey Institute of Neuroscience and Mental Health",
-        category: "Neuroscience Research & Cognitive Data Analysis",
-        image: "Florey.png",
-        description: "Conducted research on brain function and protein interactions, applying both experimental and computational methods to explore neural processes. Developed strong skills in data analysis, cognitive science research, and translating complex findings into meaningful insights capabilities now central to designing evidence based learning solutions. Collaborated with interdisciplinary teams to ensure accuracy, compliance, and effective communication of research outcomes.",
-        technologies: ["Research Design & Data Analysis", "Cognitive & Neuroscience Foundations for Learning", "Translating Research into Educational Practice", "Scientific Communication & Collaboration"],
-        challenge: {
-            question: "What is the most important factor in turning mistakes into effective learning?",
-            options: ["Error detection and correction", "Avoiding mistakes", "Memorisation without reflection"],
-            correct: 0,
-            xp: 25
+        {
+            title: 'Alcazar Learning',
+            role: 'Senior Learning Experience Designer | Ed Technologist',
+            meta: 'Melbourne (Hybrid) · 2023 – 2025',
+            image: 'assets/img/alcazar-400.webp',
+            tldr: 'I led the research and development of gamified, multimedia-rich digital modules that build professional and interpersonal skills.',
+            context: 'Professional and interpersonal skills are hard to teach online. Learners need practice, motivation and relevance, not just content.',
+            contributions: [
+                'Led research and development of digital modules in professional and interpersonal domains.',
+                'Revitalised the curriculum to align with contemporary educational and job-market needs.',
+                'Introduced gamification and model-building strategies to lift engagement.',
+                'Designed dynamic, interactive experiences using animation and multimedia.',
+                'Applied instructional design together with UX principles to boost learner satisfaction and outcomes.'
+            ],
+            approach: ['Gamification', 'Learning Experience Design', 'Animation & multimedia', 'UX research', 'Curriculum redesign'],
+            quest: {
+                question: 'According to Self-Determination Theory, which three needs fuel lasting (intrinsic) motivation?',
+                options: ['Points, badges and leaderboards', 'Reward, punishment and feedback', 'Autonomy, competence and relatedness'],
+                correct: 2,
+                why: 'Deci and Ryan\'s Self-Determination Theory identifies autonomy, competence and relatedness. Good gamification serves these needs, and points are only a means to that end.',
+                hint: 'The answer isn\'t about the game mechanics themselves.'
+            }
         },
-        link: "#"
-    },
-    {
-        title: "Monash University",
-        category: "Educational Design & Learning Innovation",
-        image: "Monash.png",
-        description: "Designed and developed comprehensive online modules in neuroscience, bioinformatics, and immunology, ensuring content was both accurate and accessible. Collaborated closely with academics and clinicians to transform complex material into engaging, learner friendly resources. Applied instructional design and UX principles to integrate technology seamlessly into courses, improving accessibility and learner engagement. Created flexible, adult learning models that supported diverse learning needs and promoted inclusive, high quality education.",
-        technologies: ["Instructional & Curriculum Design", "UX for Learning & E-Learning Development", "Data-Driven Learning Strategies", "Accessibility & Inclusive Education", "Cross-Disciplinary Collaboration"],
-        challenge: {
-            question: "What makes educational content accessible?",
-            options: ["Complex terminology", "Multiple formats", "Lengthy explanations"],
-            correct: 1,
-            xp: 25
+        {
+            title: 'Peter MacCallum Cancer Centre',
+            role: 'Instructional Designer, Genomics Education',
+            meta: 'Melbourne (Hybrid) · 2022 – 2023',
+            image: 'assets/img/petermac-400.webp',
+            tldr: 'I designed online genomics programs that made complex cancer science accessible for medical scientists and pathologists.',
+            context: 'Genomic medicine is changing cancer care quickly. Busy clinicians and scientists need accurate, up-to-date learning that respects their expertise and their time.',
+            contributions: [
+                'Designed and delivered online programs on genomic cancer for medical scientists and pathologists.',
+                'Curated accurate, high-quality content in close partnership with subject-matter experts.',
+                'Simplified complex scientific concepts into accessible, interactive learning.',
+                'Enhanced knowledge retention and engagement through innovative formats.'
+            ],
+            approach: ['Medical & genomics education', 'SME collaboration', 'Instructional design', 'Interactive eLearning', 'Content strategy'],
+            quest: {
+                question: 'When novices learn a complex topic like genomics, which technique most reliably reduces cognitive overload?',
+                options: ['Studying worked examples step by step', 'Solving hard problems with no guidance', 'Reading all the detail up front'],
+                correct: 0,
+                why: 'The worked-example effect from Cognitive Load Theory (John Sweller) shows that novices learn more from studying solved examples. Guidance is then faded as their expertise grows.',
+                hint: 'Novices benefit from seeing how an expert does it first.'
+            }
         },
-        link: "#"
+        {
+            title: 'Monash University',
+            role: 'Educational Designer / Educational Support Officer',
+            meta: 'Melbourne (Hybrid) · 2019 – 2021',
+            image: 'assets/img/monash-400.webp',
+            tldr: 'I built accessible online modules in neuroscience, bioinformatics and immunology with academics and clinicians.',
+            context: 'Health and science students come with diverse backgrounds and needs. Technical content has to be accurate and also accessible to everyone.',
+            contributions: [
+                'Developed learning modules in neuroscience, bioinformatics and immunology.',
+                'Applied adult-learning models to improve accessibility and effectiveness.',
+                'Integrated instructional design and eLearning technology to enrich courses.',
+                'Partnered with lecturers and clinicians to create accurate, impactful content.'
+            ],
+            approach: ['Adult learning', 'Accessibility & inclusion', 'eLearning development', 'Curriculum design', 'Academic partnership'],
+            quest: {
+                question: 'Which framework plans for learner variability by offering multiple means of engagement, representation and action and expression?',
+                options: ['ADDIE', 'Universal Design for Learning (UDL)', 'Kirkpatrick model'],
+                correct: 1,
+                why: 'Universal Design for Learning (CAST) builds flexibility in from the start, so more learners can access and succeed without needing separate accommodations.',
+                hint: 'It\'s about designing for everyone from the start.'
+            }
+        },
+        {
+            title: 'The Florey Institute',
+            role: 'PhD, Neuroscience & Neurochemistry (University of Melbourne)',
+            meta: 'Melbourne · 2016 – 2021',
+            image: 'assets/img/florey-400.webp',
+            tldr: 'My doctoral research on brain function is the scientific foundation of my evidence-based approach to learning design.',
+            context: 'I completed my PhD in Neuroscience and Neurochemistry through the University of Melbourne, researching at The Florey Institute of Neuroscience and Mental Health.',
+            contributions: [
+                'Researched brain function and protein interactions using experimental and computational methods.',
+                'Developed strong skills in research design, data analysis and translating complex findings into meaningful insights.',
+                'Collaborated with interdisciplinary teams, making sure research outcomes were accurate, compliant and clearly communicated.'
+            ],
+            approach: ['Research design', 'Data analysis', 'Cognitive & neuroscience foundations', 'Science communication', 'Interdisciplinary collaboration'],
+            quest: {
+                question: 'What turns a mistake into a powerful learning moment?',
+                options: ['Avoiding mistakes altogether', 'Re-reading notes without testing yourself', 'Detecting the error and getting corrective feedback'],
+                correct: 2,
+                why: 'The brain learns from prediction errors. When an error is detected and quickly corrected with feedback, memory is strengthened. This is why low-stakes testing with feedback works so well.',
+                hint: 'Errors aren\'t the problem. What happens next is.'
+            }
+        }
+    ];
+
+    const XP_PER_QUEST = 25;
+    const STORE_KEY = 'rt-quests-v2';
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    /* ---------- Safe storage ---------- */
+    const store = {
+        get(key) { try { return localStorage.getItem(key); } catch (e) { return null; } },
+        set(key, val) { try { localStorage.setItem(key, val); } catch (e) { /* storage unavailable */ } },
+        remove(key) { try { localStorage.removeItem(key); } catch (e) { /* storage unavailable */ } }
+    };
+
+    let completed = new Set();
+    try {
+        const saved = JSON.parse(store.get(STORE_KEY) || '[]');
+        if (Array.isArray(saved)) saved.forEach((i) => { if (projects[i]) completed.add(i); });
+    } catch (e) { /* ignore bad data */ }
+
+    const saveProgress = () => store.set(STORE_KEY, JSON.stringify([...completed]));
+
+    /* ---------- Elements ---------- */
+    const modal = document.getElementById('project-modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalInner = modal.querySelector('.modal-inner');
+    const closeBtn = document.getElementById('modal-close');
+    const hud = document.getElementById('hud');
+    const hudFill = document.getElementById('hud-fill');
+    const hudCount = document.getElementById('hud-count');
+    const unlockCard = document.getElementById('unlock-card');
+    const toast = document.getElementById('toast');
+    const workCards = document.querySelectorAll('.work-card');
+
+    let lastTrigger = null;
+
+    const escapeHTML = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    /* ---------- Progress UI ---------- */
+    function renderProgress(bump) {
+        const n = completed.size;
+        const total = projects.length;
+        hudFill.style.width = (n / total) * 100 + '%';
+        hudCount.textContent = n + '/' + total;
+        hud.setAttribute('aria-label', 'XP ' + n + '/' + total + ' quests completed (' + n * XP_PER_QUEST + ' XP)');
+
+        workCards.forEach((card) => {
+            const i = Number(card.dataset.open);
+            card.classList.toggle('is-complete', completed.has(i));
+        });
+
+        unlockCard.hidden = n < total;
+
+        if (bump && !reduceMotion.matches) {
+            hud.classList.remove('is-bump');
+            void hud.offsetWidth;
+            hud.classList.add('is-bump');
+        }
     }
-];
 
-// Modal functions
-function openModal(projectIndex) {
-    const modal = document.getElementById('projectModal');
-    const modalContent = document.getElementById('modalContent');
-    const project = projects[projectIndex];
+    /* ---------- Case-study dialog ---------- */
+    function questHTML(i) {
+        const q = projects[i].quest;
+        const done = completed.has(i);
+        const keys = ['A', 'B', 'C', 'D'];
+        const opts = q.options.map((opt, k) => {
+            const cls = done && k === q.correct ? ' is-correct' : '';
+            return '<button type="button" class="quest-option' + cls + '" data-choice="' + k + '"' + (done ? ' disabled' : '') + '>' +
+                '<span class="key" aria-hidden="true">' + keys[k] + '</span><span>' + escapeHTML(opt) + '</span></button>';
+        }).join('');
 
-    // Reset scroll position immediately
-    modalContent.scrollTop = 0;
-    modalContent.scrollTo(0, 0);
+        const feedback = done
+            ? '<div class="fb fb-good"><strong>Quest complete · +' + XP_PER_QUEST + ' XP</strong><p>' + escapeHTML(q.why) + '</p></div>'
+            : '';
 
-    // Create challenge HTML if it exists
-    let challengeHTML = '';
-    if (project.challenge) {
-        challengeHTML = `
-            <div class="challenge">
-                <h3>🧠 Knowledge Challenge</h3>
-                <p class="challenge-question">${project.challenge.question}</p>
-                <div class="challenge-options">
-                    ${project.challenge.options.map((option, index) => 
-                        `<div class="challenge-option" onclick="checkAnswer(${projectIndex}, ${index}, this)">
-                            ${option}
-                        </div>`
-                    ).join('')}
-                </div>
-                <div id="feedback-${projectIndex}" style="display:none; background: #d4edda; border: 2px solid #28a745; border-radius: 8px; padding: 15px; margin-top: 15px; text-align: center;">
-                    <p style="color: #155724; font-weight: bold; font-size: 1.2em; margin: 0;">
-                        🎉 Correct! Challenge completed! 🎉
-                    </p>
-                </div>
-            </div>
-        `;
+        return (
+            '<section class="quest" aria-labelledby="quest-title-' + i + '">' +
+                '<div class="quest-head">' +
+                    '<h3 class="pixel-label" id="quest-title-' + i + '">Micro-quest ' + String(i + 1).padStart(2, '0') + '</h3>' +
+                    '<span class="xp-chip">+' + XP_PER_QUEST + ' XP</span>' +
+                '</div>' +
+                '<fieldset>' +
+                    '<legend>' + escapeHTML(q.question) + '</legend>' +
+                    '<div class="quest-options">' + opts + '</div>' +
+                '</fieldset>' +
+                '<div class="quest-feedback" role="status" aria-live="polite">' + feedback + '</div>' +
+            '</section>'
+        );
     }
 
-    modalContent.innerHTML = `
-        <h2 id="modal-title">${project.title}</h2>
-        <p class="category">${project.category}</p>
-        <div style="text-align: center; margin: 10px 0 20px;">
-            <img src="${project.image}" alt="${project.title} - ${project.category}" style="max-width: 90%; max-height: 200px; border: 2px solid #000; object-fit: contain; background: #fff; padding: 10px; margin: 0 auto;">
-        </div>
-        <p>${project.description}</p>
-        <div style="margin: 20px 0;">
-            <h3>Technologies & Skills:</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
-                ${project.technologies.map(tech => 
-                    `<span style="background: #f0f0f0; padding: 5px 10px; border: 2px solid #000; display: inline-block; border-radius: 4px;">${tech}</span>`
-                ).join('')}
-            </div>
-        </div>
-        ${challengeHTML}
-        ${project.link !== '#' ? `
-        <div style="margin-top: 20px; text-align: center;">
-            <a href="${project.link}" target="_blank" style="display: inline-block; padding: 10px 20px; background: #4a90e2; color: white; text-decoration: none; border: 2px solid #000; border-radius: 4px; font-weight: 600;">
-                View Live Demo
-            </a>
-        </div>
-        ` : ''}
-        <div style="margin-top: 15px; text-align: center; font-size: 0.8rem; color: #6c757d; font-style: italic;">
-            💡 Click outside or press Escape to close
-        </div>
-    `;
+    function openProject(i, trigger) {
+        const p = projects[i];
+        if (!p) return;
+        lastTrigger = trigger || document.activeElement;
 
-    modal.style.display = 'flex';
-    
-    // Focus management for accessibility
-    const closeBtn = modal.querySelector('.close-btn');
-    if (closeBtn) {
+        const next = (i + 1) % projects.length;
+
+        modalContent.innerHTML =
+            '<div class="cs-head">' +
+                '<img class="cs-thumb pixel-art" src="' + p.image + '" alt="" width="112" height="112">' +
+                '<div>' +
+                    '<p class="pixel-label">Case study ' + String(i + 1).padStart(2, '0') + '</p>' +
+                    '<h2 id="modal-title">' + escapeHTML(p.title) + '</h2>' +
+                    '<p class="cs-meta">' + escapeHTML(p.role) + ' · ' + escapeHTML(p.meta) + '</p>' +
+                '</div>' +
+            '</div>' +
+            '<p class="cs-tldr">' + escapeHTML(p.tldr) + '</p>' +
+            '<div class="cs-block"><h3>Context</h3><p>' + escapeHTML(p.context) + '</p></div>' +
+            '<div class="cs-block"><h3>What I did</h3><ul>' + p.contributions.map((c) => '<li>' + escapeHTML(c) + '</li>').join('') + '</ul></div>' +
+            '<div class="cs-block"><h3>Approach &amp; skills</h3><ul class="chips">' + p.approach.map((a) => '<li>' + escapeHTML(a) + '</li>').join('') + '</ul></div>' +
+            '<p class="cs-note">Client and organisational details are summarised at a high level to respect confidentiality.</p>' +
+            questHTML(i) +
+            '<div class="modal-foot">' +
+                '<button type="button" class="btn btn-ghost" data-close>Close</button>' +
+                '<button type="button" class="btn btn-secondary" data-next="' + next + '">Next: ' + escapeHTML(projects[next].title) + ' →</button>' +
+            '</div>';
+
+        modalContent.dataset.index = i;
+
+        if (!modal.open) {
+            if (typeof modal.showModal === 'function') modal.showModal();
+            else modal.setAttribute('open', '');
+            document.body.style.overflow = 'hidden';
+        }
+        modalInner.scrollTop = 0;
         closeBtn.focus();
     }
-    
-    // Ensure scroll position is at top after content loads
-    setTimeout(() => {
-        modalContent.scrollTop = 0;
-        modalContent.scrollTo(0, 0);
-    }, 50);
-    
-    // Auto-close modal after 30 seconds if no interaction
-    const autoCloseTimer = setTimeout(() => {
-        closeModal();
-    }, 30000);
-    
-    // Store timer reference for potential clearing
-    modal.autoCloseTimer = autoCloseTimer;
-}
 
-function closeModal() {
-    const modal = document.getElementById('projectModal');
-    const modalContent = document.getElementById('modalContent');
-    
-    // Clear auto-close timer if it exists
-    if (modal.autoCloseTimer) {
-        clearTimeout(modal.autoCloseTimer);
-        modal.autoCloseTimer = null;
+    function onClosed() {
+        document.body.style.overflow = '';
+        document.body.appendChild(toast);
+        if (lastTrigger && typeof lastTrigger.focus === 'function') lastTrigger.focus();
     }
-    
-    // Reset scroll position to top
-    modalContent.scrollTop = 0;
-    modalContent.scrollTo(0, 0);
-    
-    modal.style.display = 'none';
-}
 
-// Close modal when clicking outside the content
-window.onclick = function(event) {
-    const modal = document.getElementById('projectModal');
-    const modalContent = document.getElementById('modalContent');
-    if (event.target == modal) {
-        // Reset scroll position before closing
-        modalContent.scrollTop = 0;
-        modalContent.scrollTo(0, 0);
-        closeModal();
+    function closeProject() {
+        if (typeof modal.close === 'function') {
+            if (modal.open) modal.close();
+        } else {
+            // Fallback for browsers without <dialog>: no 'close' event fires
+            modal.removeAttribute('open');
+            onClosed();
+        }
     }
-}
 
-// Close modal with Escape key
-document.addEventListener('keydown', function(event) {
-    const modal = document.getElementById('projectModal');
-    const modalContent = document.getElementById('modalContent');
-    if (event.key === 'Escape' && modal.style.display === 'flex') {
-        // Reset scroll position before closing
-        modalContent.scrollTop = 0;
-        modalContent.scrollTo(0, 0);
-        closeModal();
-    }
-});
+    modal.addEventListener('close', onClosed);
 
-// Navigation
-function scrollToWorks() {
-    const worksSection = document.querySelector('.works-section');
-    if (worksSection) {
-        worksSection.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
-}
+    // Click on backdrop closes (the dialog element itself is the backdrop area)
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeProject();
+    });
 
-// Initialize guide cards
-document.addEventListener('DOMContentLoaded', function() {
-    const guideCards = document.querySelectorAll('.guide-card');
-    
-    guideCards.forEach((card) => {
-        card.addEventListener('click', scrollToWorks);
-        card.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                scrollToWorks();
+    closeBtn.addEventListener('click', closeProject);
+
+    modalContent.addEventListener('click', (e) => {
+        const choice = e.target.closest('[data-choice]');
+        if (choice) return answer(Number(modalContent.dataset.index), Number(choice.dataset.choice), choice);
+
+        if (e.target.closest('[data-close]')) return closeProject();
+
+        const nextBtn = e.target.closest('[data-next]');
+        if (nextBtn) {
+            const n = Number(nextBtn.dataset.next);
+            const card = document.querySelector('.work-card[data-open="' + n + '"]');
+            openProject(n, card || lastTrigger);
+        }
+    });
+
+    /* ---------- Quests ---------- */
+    function answer(i, choice, btn) {
+        const q = projects[i].quest;
+        const feedback = modalContent.querySelector('.quest-feedback');
+        const buttons = modalContent.querySelectorAll('.quest-option');
+
+        if (choice === q.correct) {
+            buttons.forEach((b) => { b.disabled = true; });
+            btn.classList.add('is-correct');
+            feedback.innerHTML = '<div class="fb fb-good"><strong>Correct! +' + XP_PER_QUEST + ' XP</strong><p>' + escapeHTML(q.why) + '</p></div>';
+
+            const isNew = !completed.has(i);
+            completed.add(i);
+            saveProgress();
+            renderProgress(isNew);
+
+            if (isNew) {
+                if (completed.size === projects.length) {
+                    showToast('Achievement unlocked · Portfolio Explorer');
+                    confetti(120);
+                    unlockCard.classList.add('is-new');
+                } else {
+                    showToast('Quest complete · ' + completed.size + '/' + projects.length);
+                    confetti(40);
+                }
             }
+        } else {
+            // Safe failure: mark this option, keep others open, give a hint
+            btn.classList.add('is-wrong');
+            btn.disabled = true;
+            feedback.innerHTML = '<div class="fb fb-bad"><strong>Not quite, try again</strong><p>Hint: ' + escapeHTML(q.hint) + '</p></div>';
+        }
+    }
+
+    let toastTimer;
+    function showToast(msg) {
+        // A modal dialog sits in the top layer and makes the page inert,
+        // so the toast must live inside it to be seen and announced
+        (modal.open ? modal : document.body).appendChild(toast);
+        toast.textContent = msg;
+        toast.classList.add('is-visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 3200);
+    }
+
+    function confetti(count) {
+        if (reduceMotion.matches) return;
+        const colours = ['#2F4BD8', '#F5B84A', '#5BD68F', '#FF8FB1', '#22D3B8', '#B45309'];
+        const layer = document.createElement('div');
+        layer.className = 'confetti';
+        layer.setAttribute('aria-hidden', 'true');
+        for (let k = 0; k < count; k++) {
+            const bit = document.createElement('i');
+            bit.style.left = Math.random() * 100 + '%';
+            bit.style.background = colours[k % colours.length];
+            bit.style.animationDuration = 1.8 + Math.random() * 1.6 + 's';
+            bit.style.animationDelay = Math.random() * 0.6 + 's';
+            layer.appendChild(bit);
+        }
+        // Inside an open dialog the top layer covers the page, so attach there
+        (modal.open ? modal : document.body).appendChild(layer);
+        setTimeout(() => layer.remove(), 4200);
+    }
+
+    document.getElementById('reset-progress').addEventListener('click', () => {
+        completed = new Set();
+        store.remove(STORE_KEY);
+        unlockCard.classList.remove('is-new');
+        renderProgress(false);
+        showToast('Quests reset. Good luck!');
+        // The reset button is inside the now-hidden unlock card, so move focus
+        const first = document.querySelector('.work-card');
+        first.focus({ preventScroll: true });
+        first.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'center' });
+    });
+
+    /* ---------- Openers (cards + timeline links) ---------- */
+    document.querySelectorAll('[data-open]').forEach((el) => {
+        el.addEventListener('click', () => openProject(Number(el.dataset.open), el));
+    });
+
+    /* ---------- Theme toggle ---------- */
+    const themeBtn = document.getElementById('theme-toggle');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function currentTheme() {
+        return document.documentElement.dataset.theme || (systemDark.matches ? 'dark' : 'light');
+    }
+    function syncThemeLabel() {
+        const t = currentTheme();
+        themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+    themeBtn.addEventListener('click', () => {
+        const next = currentTheme() === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        store.set('rt-theme', next);
+        syncThemeLabel();
+    });
+    syncThemeLabel();
+    if (systemDark.addEventListener) systemDark.addEventListener('change', syncThemeLabel);
+
+    /* ---------- Mobile menu ---------- */
+    const menuBtn = document.getElementById('menu-btn');
+    const nav = document.getElementById('site-nav');
+
+    function setMenu(open) {
+        nav.classList.toggle('is-open', open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    menuBtn.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
+    nav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); menuBtn.focus(); }
+    });
+
+    /* ---------- Active nav link on scroll ---------- */
+    const navLinks = [...nav.querySelectorAll('a')];
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                navLinks.forEach((a) => {
+                    if (a.getAttribute('href') === '#' + entry.target.id) a.setAttribute('aria-current', 'true');
+                    else a.removeAttribute('aria-current');
+                });
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        navLinks.forEach((a) => {
+            const sec = document.querySelector(a.getAttribute('href'));
+            if (sec) io.observe(sec);
         });
-        card.style.cursor = 'pointer';
-    });
-
-    // Initialize work items for keyboard navigation
-    const workItems = document.querySelectorAll('.work-item');
-    workItems.forEach((item, index) => {
-        item.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                openModal(index);
-            }
-        });
-    });
-});
-
-// Challenge System
-const completedChallenges = new Set();
-let completedProjects = new Set();
-
-function showChallengeCompletion() {
-    showCelebration('Challenge Complete! 🎉');
-}
-
-function markProjectCompleted(projectIndex) {
-    const workItem = document.querySelectorAll('.work-item')[projectIndex];
-    if (workItem) {
-        workItem.classList.add('completed');
-    }
-}
-
-function updateProjectCompletion() {
-    completedProjects.forEach(projectIndex => {
-        markProjectCompleted(projectIndex);
-    });
-}
-
-function checkCompletion() {
-    if (completedProjects.size === projects.length) {
-        // Show completion modal
-        const modal = document.createElement('div');
-        modal.className = 'modal';
-        modal.style.display = 'flex';
-        modal.style.zIndex = '2500';
-        modal.innerHTML = `
-            <div class="modal-content" style="max-width: 600px; text-align: center;">
-                <span class="close" onclick="this.parentElement.parentElement.style.display='none'" style="position: absolute; top: 10px; right: 10px; font-size: 24px; cursor: pointer; color: #495057; font-weight: bold; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #f8f9fa; border: 2px solid #495057; transition: all 0.2s ease; box-shadow: 2px 2px 0 rgba(73, 80, 87, 0.2); z-index: 10;" onmouseover="this.style.background='#e9ecef'; this.style.transform='scale(1.05)'; this.style.boxShadow='3px 3px 0 rgba(73, 80, 87, 0.3)'" onmouseout="this.style.background='#f8f9fa'; this.style.transform='scale(1)'; this.style.boxShadow='2px 2px 0 rgba(73, 80, 87, 0.2)'">&times;</span>
-                <h2>🎉 Portfolio Complete! 🎉</h2>
-                <p>You've explored all my projects and completed the challenges!</p>
-                <div style="margin: 30px 0;">
-                    <div style="font-size: 4rem; margin: 20px 0;">🏆</div>
-                    <h3>Portfolio Explorer</h3>
-                    <p>Thank you for taking the time to explore my work</p>
-                </div>
-                <p>Interested in collaborating or learning more about my work in neuroscience, education, and AI?</p>
-                <div style="margin-top: 30px;">
-                    <a href="https://www.linkedin.com/in/reza-tondfekr" target="_blank" style="display: inline-block; padding: 12px 24px; background: #0077b5; color: white; text-decoration: none; border: 2px solid #495057; margin: 10px; border-radius: 4px; box-shadow: 3px 3px 0 rgba(73, 80, 87, 0.2); transition: all 0.2s ease;">
-                        Connect on LinkedIn
-                    </a>
-                    <a href="mailto:r.tondfekr@gmail.com" style="display: inline-block; padding: 12px 24px; background: #6c757d; color: white; text-decoration: none; border: 2px solid #495057; margin: 10px; border-radius: 4px; box-shadow: 3px 3px 0 rgba(73, 80, 87, 0.2); transition: all 0.2s ease;">
-                        Send me an Email
-                    </a>
-                </div>
-            </div>
-        `;
-        document.body.appendChild(modal);
-        
-        // Add celebration animation to final page
-        createFullScreenConfetti();
-    }
-}
-
-function checkAnswer(projectIndex, selectedIndex, element) {
-    const project = projects[projectIndex];
-    const feedback = document.getElementById(`feedback-${projectIndex}`);
-    const options = element.parentElement.children;
-    
-    if (completedChallenges.has(projectIndex)) {
-        feedback.textContent = "You've already completed this challenge! 🏆";
-        feedback.style.display = 'block';
-        return;
     }
 
-    // Disable all options
-    for (let option of options) {
-        option.style.pointerEvents = 'none';
-    }
-
-    if (selectedIndex === project.challenge.correct) {
-        element.classList.add('correct');
-        
-        completedChallenges.add(projectIndex);
-        completedProjects.add(projectIndex);
-        markProjectCompleted(projectIndex);
-        feedback.style.display = 'block';
-        showChallengeCompletion();
-        
-        // Check if all projects are completed
-        checkCompletion();
-    } else {
-        element.classList.add('incorrect');
-        const correctOption = options[project.challenge.correct];
-        correctOption.classList.add('correct');
-        
-        feedback.innerHTML = '<p style="color: #721c24; font-weight: bold; font-size: 1.2em; margin: 0;">Almost there! Try another project! 🌟</p>';
-        feedback.style.display = 'block';
-    }
-}
-
-function showCelebration(message) {
-    // Create celebration text with mobile-optimized styling
-    const celebration = document.createElement('div');
-    celebration.className = 'celebration';
-    celebration.style.background = '#fff';
-    celebration.style.border = '3px solid #000';
-    celebration.style.borderRadius = '8px';
-    celebration.style.padding = '12px 16px';
-    celebration.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.3)';
-    celebration.style.fontSize = '1rem';
-    celebration.style.fontWeight = 'bold';
-    celebration.style.color = '#28a745';
-    celebration.style.maxWidth = '280px';
-    celebration.style.width = '90%';
-    celebration.style.textAlign = 'center';
-    celebration.style.margin = '0 auto';
-    celebration.textContent = message;
-    document.body.appendChild(celebration);
-    celebration.style.display = 'block';
-    
-    // Create full-screen confetti
-    createFullScreenConfetti();
-    
-    // Remove elements after animation and close modal
-    setTimeout(() => {
-        celebration.style.display = 'none';
-        document.body.removeChild(celebration);
-        
-        // Close modal after celebration
-        closeModal();
-    }, 2500);
-}
-
-function createFullScreenConfetti() {
-    const confettiOverlay = document.createElement('div');
-    confettiOverlay.className = 'confetti-overlay';
-    document.body.appendChild(confettiOverlay);
-    
-    // Create confetti pieces
-    for (let i = 0; i < 100; i++) {
-        const confetti = document.createElement('div');
-        confetti.className = 'confetti-piece';
-        confetti.style.left = Math.random() * 100 + '%';
-        confetti.style.animationDelay = Math.random() * 3 + 's';
-        confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-        confettiOverlay.appendChild(confetti);
-    }
-    
-    // Remove confetti overlay after animation
-    setTimeout(() => {
-        document.body.removeChild(confettiOverlay);
-    }, 5000);
-}
+    renderProgress(false);
+})();

@@ -1,108 +1,494 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Reza Tondfekr | Senior Learning Designer &amp; Educational Technologist</title>
+    <meta name="description" content="Reza Tondfekr is a Melbourne-based Senior Learning Designer and Educational Technologist with a PhD in Neuroscience, designing evidence-based, AI-enabled and gamified learning experiences.">
+    <meta name="author" content="Reza Tondfekr">
+    <link rel="canonical" href="https://tondfekr.github.io/portfolio/">
+    <meta name="theme-color" content="#F6F4EE" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#12131A" media="(prefers-color-scheme: dark)">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Reza Tondfekr | Senior Learning Designer &amp; Educational Technologist">
+    <meta property="og:description" content="Neuroscience PhD designing evidence-based, AI-enabled and gamified learning experiences. Melbourne, Australia.">
+    <meta property="og:url" content="https://tondfekr.github.io/portfolio/">
+    <meta property="og:image" content="https://tondfekr.github.io/portfolio/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Reza Tondfekr, Senior Learning Designer and Educational Technologist">
+    <meta property="og:locale" content="en_AU">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Apply saved theme before paint to avoid a flash -->
+    <script>
+        try { const t = localStorage.getItem('rt-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Reza Tondfekr",
+        "jobTitle": "Senior Learning Designer",
+        "url": "https://tondfekr.github.io/portfolio/",
+        "image": "https://tondfekr.github.io/portfolio/assets/og-image.png",
+        "description": "Senior Learning Experience Designer and Educational Technologist with a PhD in Neuroscience.",
+        "email": "mailto:r.tondfekr@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Melbourne", "addressRegion": "VIC", "addressCountry": "AU" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Melbourne" },
+        "worksFor": { "@type": "CollegeOrUniversity", "name": "Victoria University" },
+        "knowsAbout": ["Learning Experience Design", "Instructional Design", "Educational Technology", "Artificial Intelligence in Education", "Assessment Design", "Gamification", "Neuroscience"],
+        "sameAs": ["https://www.linkedin.com/in/reza-tondfekr"]
+    }
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="profile-section pixel-border" role="banner">
-        <div class="profile-content">
-            <h1 class="profile-name">Reza Tondfekr<div class="hover-bar"></div></h1>
-            <h2 class="profile-title">Educational Technologist & Learning Designer | Researcher | AI Integration Specialist</h2>
-            <p class="profile-desc">
-                🧠 I design adaptive, evidence and research based learning experiences at the intersection of science, technology, education and artificial intelligence. My work blends instructional design, user experience and data to create accessible and personalised training that transforms complex ideas into engaging and outcomes driven learning.
-            </p>
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="top">
+        <div class="header-inner">
+            <a href="#top" class="brand" aria-label="Reza Tondfekr, back to top">
+                <span class="brand-mark" aria-hidden="true">RT</span>
+                <span class="brand-name">Reza Tondfekr</span>
+            </a>
+
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-tools">
+                <a href="#work" class="hud" aria-label="XP 0/6 quests completed" id="hud">
+                    <span class="hud-label" aria-hidden="true">XP</span>
+                    <span class="hud-bar" aria-hidden="true"><span class="hud-fill" id="hud-fill"></span></span>
+                    <span class="hud-count" aria-hidden="true" id="hud-count">0/6</span>
+                </a>
+                <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+                    <svg class="icon icon-moon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path d="M6 1h4v1H7v1H6v2H5v6h1v2h1v1h3v1H6v-1H4v-1H3v-2H2V5h1V3h1V2h2z"/><path d="M10 1h2v1h1v1h1v2h1v2h-1v1h-1v1h-2v1H9V9H8V8H7V5h1V3h1V2h1z" opacity=".35"/></svg>
+                    <svg class="icon icon-sun" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path d="M7 0h2v2H7zM7 14h2v2H7zM0 7h2v2H0zM14 7h2v2h-2zM2 2h2v2H2zM12 2h2v2h-2zM2 12h2v2H2zM12 12h2v2h-2zM6 4h4v1h1v1h1v4h-1v1h-1v1H6v-1H5v-1H4V6h1V5h1z"/></svg>
+                </button>
+                <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                    <svg class="icon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path d="M1 3h14v2H1zM1 7h14v2H1zM1 11h14v2H1z"/></svg>
+                </button>
+            </div>
         </div>
     </header>
 
-    <section class="portfolio-guide pixel-border" role="region" aria-labelledby="portfolio-guide-title">
-        <div class="container">
-            <h2 class="section-title" id="portfolio-guide-title">Portfolio Guide</h2>
-            <div class="guide-grid">
-                <article class="guide-card" tabindex="0" role="button" aria-label="View Projects - Explore EdTech case studies">
-                    <div class="guide-icon" aria-hidden="true">📂</div>
-                    <h3 class="guide-title">View Projects</h3>
-                    <p class="guide-desc">Explore EdTech case studies in skill development, neuroscience research, and scalable e-learning design.</p>
-                </article>
-                
-                <article class="guide-card" tabindex="0" role="button" aria-label="Take Challenge - Test your knowledge with interactive quizzes">
-                    <div class="guide-icon" aria-hidden="true">❓</div>
-                    <h3 class="guide-title">Take Challenge</h3>
-                    <p class="guide-desc">Test your knowledge with quick, interactive micro-quizzes built with learning science principles.</p>
-                </article>
-                
-                <article class="guide-card" tabindex="0" role="button" aria-label="Unlock Contact - Complete challenges to unlock contact details">
-                    <div class="guide-icon" aria-hidden="true">🏆</div>
-                    <h3 class="guide-title">Unlock Contact</h3>
-                    <p class="guide-desc">View and complete all challenges to unlock contact details and explore project collaboration opportunities.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="works-section" role="region" aria-labelledby="works-title">
-        <h2 class="section-title" id="works-title">Works & Projects</h2>
-        <div class="work-grid">
-            <div class="work-item pixel-border" onclick="openModal(0)" tabindex="0" role="button" aria-label="View Alcazar Learning project details">
-                <img src="Alcazar Learning.png" alt="Alcazar Learning - AI Powered Skill Development platform" class="work-image">
-                <div class="work-info">
-                    <h3>Alcazar Learning</h3>
-                    <p>AI Powered Skill Development</p>
+    <main id="main">
+        <!-- ============ HERO ============ -->
+        <section class="hero container" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Senior Learning Designer · EdTech · AI in Education</p>
+                <h1 id="hero-title" class="hero-title">
+                    <span class="hero-name">Reza Tondfekr</span>
+                    I design learning that works <em>with</em> the brain, not against it.
+                </h1>
+                <p class="hero-lede">
+                    Learning Experience Designer and Educational Technologist with a PhD in Neuroscience. I combine instructional design, UX, AI and play to turn complex topics into accessible, engaging and evidence-based learning that makes a measurable difference.
+                </p>
+                <div class="hero-actions">
+                    <a href="#work" class="btn btn-primary">View case studies</a>
+                    <a href="assets/Reza_Tondfekr_CV.pdf" class="btn btn-secondary" download>
+                        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path d="M7 1h2v8h2v-1h1v1h-1v1h-1v1H9v1H7v-1H6v-1H5V9H4V8h1v1h2zM1 12h2v2h10v-2h2v4H1z"/></svg>
+                        Download CV
+                    </a>
+                    <a href="mailto:r.tondfekr@gmail.com" class="btn btn-ghost">Get in touch</a>
                 </div>
             </div>
 
-            <div class="work-item pixel-border" onclick="openModal(1)" tabindex="0" role="button" aria-label="View Peter MacCallum Cancer Centre project details">
-                <img src="PeterMac.png" alt="Peter MacCallum Cancer Centre - Medical Genomics Education platform" class="work-image">
-                <div class="work-info">
-                    <h3>Peter MacCallum Cancer Centre</h3>
-                    <p>Medical Genomics Education</p>
+            <aside class="stat-card" aria-label="Profile at a glance">
+                <div class="stat-card-head">
+                    <span class="pixel-label">Player profile</span>
+                    <span class="status-pill"><span class="pulse" aria-hidden="true"></span>Open to collaborations</span>
+                </div>
+                <dl class="stats">
+                    <div><dt>Class</dt><dd>Learning Experience Designer</dd></div>
+                    <div><dt>Now</dt><dd>Senior Learning Designer, Victoria University</dd></div>
+                    <div><dt>Special</dt><dd>PhD, Neuroscience &amp; Neurochemistry</dd></div>
+                    <div><dt>Base</dt><dd>Melbourne, VIC, Australia</dd></div>
+                </dl>
+                <div class="strengths">
+                    <p class="stats-label">Core strengths</p>
+                    <ul class="chips">
+                        <li>Learning design</li>
+                        <li>UX for learning</li>
+                        <li>AI in education</li>
+                        <li>Gamification</li>
+                        <li>Assessment design</li>
+                    </ul>
+                </div>
+                <ul class="quick-facts">
+                    <li><strong>7+</strong><span>years in digital learning</span></li>
+                    <li><strong>5</strong><span>organisations across higher ed, health &amp; industry</span></li>
+                    <li><strong>7</strong><span>professional certifications</span></li>
+                </ul>
+            </aside>
+        </section>
+
+        <!-- ============ ABOUT ============ -->
+        <section class="section container" id="about" aria-labelledby="about-title">
+            <div class="section-head">
+                <p class="pixel-label">01 · About</p>
+                <h2 id="about-title">From the neuroscience lab to learning design</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-copy">
+                    <p>
+                        I started my career studying how the brain works. That research background in neuroscience and neurochemistry now shapes everything I design. I translate what we know about attention, memory and motivation into learning that people actually finish, enjoy and remember.
+                    </p>
+                    <p>
+                        Today I partner with academics, clinicians, subject-matter experts and cross-functional teams to design user-centred, interactive programs. I also redesign assessment so that it is authentic, sustainable and aligned with standards. My toolkit spans instructional and curriculum design, UX research, gamification, animation and multimedia, and practical AI integration.
+                    </p>
+                </div>
+                <ul class="principles" aria-label="Design principles">
+                    <li class="principle">
+                        <span class="principle-icon" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><path d="M5 1h6v1h2v2h1v4h-1v2h-1v2h-2v3H6v-3H4v-2H3V8H2V4h1V2h2zM7 12h2v-2h2V8h1V4h-1V3H5v1H4v4h1v2h2z"/></svg>
+                        </span>
+                        <h3>Evidence first</h3>
+                        <p>I ground each design in learning science, including cognitive load, retrieval practice and feedback.</p>
+                    </li>
+                    <li class="principle">
+                        <span class="principle-icon" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><path d="M6 1h4v1h1v4h-1v1H6V6H5V2h1zM3 9h10v1h1v2h1v3H1v-3h1v-2h1z"/></svg>
+                        </span>
+                        <h3>Learner-centred UX</h3>
+                        <p>I apply UX research and accessibility from the first sketch to the final build.</p>
+                    </li>
+                    <li class="principle">
+                        <span class="principle-icon" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><path d="M3 4h10v1h1v1h1v5h-1v1h-2v-1h-1v-1H5v1H4v1H2v-1H1V6h1V5h1zM4 6v1H3v1h1v1h1V8h1V7H5V6zM11 6v1h1V6zM10 8v1h1V8zM12 8v1h1V8z"/></svg>
+                        </span>
+                        <h3>Play with purpose</h3>
+                        <p>My games and challenges build motivation and mastery, not just points.</p>
+                    </li>
+                    <li class="principle">
+                        <span class="principle-icon" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><path d="M4 3h8v1h1v8h-1v1H4v-1H3V4h1zM5 5v6h6V5zM6 6h4v4H6zM5 0h2v3H5zM9 0h2v3H9zM5 13h2v3H5zM9 13h2v3H9zM0 5h3v2H0zM0 9h3v2H0zM13 5h3v2h-3zM13 9h3v2h-3z"/></svg>
+                        </span>
+                        <h3>AI, responsibly</h3>
+                        <p>I use AI to personalise learning and help teams adopt it with confidence.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============ EXPERIENCE ============ -->
+        <section class="section container" id="experience" aria-labelledby="experience-title">
+            <div class="section-head">
+                <p class="pixel-label">02 · Experience</p>
+                <h2 id="experience-title">Career timeline</h2>
+            </div>
+
+            <ol class="timeline">
+                <li class="tl-item is-now">
+                    <div class="tl-meta">
+                        <span class="tl-date">Dec 2025 – Present</span>
+                        <span class="now-pill">Now</span>
+                    </div>
+                    <div class="tl-body">
+                        <h3>Senior Learning Designer</h3>
+                        <p class="tl-org">Victoria University · Melbourne, VIC</p>
+                        <ul>
+                            <li>Partner with course teams and unit convenors to review and redesign assessments under the Assessment Refresh Project (ARP).</li>
+                            <li>Map learning outcomes and employability skills, and document assessment architecture that aligns units with VU Assessment Standards, TEQSA requirements and the ARP framework.</li>
+                            <li>Facilitate design workshops that support authentic, sustainable and progressive assessment practice across the University.</li>
+                        </ul>
+                        <button type="button" class="link-btn" data-open="0">Read case study →</button>
+                    </div>
+                </li>
+                <li class="tl-item is-now">
+                    <div class="tl-meta">
+                        <span class="tl-date">Nov 2025 – Present</span>
+                        <span class="now-pill">Now</span>
+                    </div>
+                    <div class="tl-body">
+                        <h3>AI &amp; Technology Enablement Specialist</h3>
+                        <p class="tl-org">NeuroAIQ · Melbourne, VIC</p>
+                        <ul>
+                            <li>Support AI adoption and digital-transformation initiatives across cross-functional teams.</li>
+                            <li>Contribute to the planning and design of client programs focused on AI integration, behavioural science and digital upskilling.</li>
+                        </ul>
+                        <button type="button" class="link-btn" data-open="1">Read case study →</button>
+                    </div>
+                </li>
+                <li class="tl-item">
+                    <div class="tl-meta"><span class="tl-date">2023 – 2025</span></div>
+                    <div class="tl-body">
+                        <h3>Senior Learning Experience Designer | Ed Technologist</h3>
+                        <p class="tl-org">Alcazar Learning · Melbourne (Hybrid)</p>
+                        <ul>
+                            <li>Led research and development of digital modules in professional and interpersonal skill domains.</li>
+                            <li>Revitalised curriculum to meet contemporary educational needs, and introduced gamification and model-building strategies to lift engagement.</li>
+                            <li>Designed dynamic, interactive experiences with animation and multimedia, applying UX principles to boost learner satisfaction and outcomes.</li>
+                        </ul>
+                        <button type="button" class="link-btn" data-open="2">Read case study →</button>
+                    </div>
+                </li>
+                <li class="tl-item">
+                    <div class="tl-meta"><span class="tl-date">2022 – 2023</span></div>
+                    <div class="tl-body">
+                        <h3>Instructional Designer, Genomics Education</h3>
+                        <p class="tl-org">Peter MacCallum Cancer Centre · Melbourne (Hybrid)</p>
+                        <ul>
+                            <li>Designed and delivered online programs on genomic cancer for medical scientists and pathologists.</li>
+                            <li>Curated accurate, high-quality content with subject-matter experts, simplifying complex science into accessible, interactive learning.</li>
+                            <li>Enhanced knowledge retention and engagement through innovative formats.</li>
+                        </ul>
+                        <button type="button" class="link-btn" data-open="3">Read case study →</button>
+                    </div>
+                </li>
+                <li class="tl-item">
+                    <div class="tl-meta"><span class="tl-date">2019 – 2021</span></div>
+                    <div class="tl-body">
+                        <h3>Educational Designer / Educational Support Officer</h3>
+                        <p class="tl-org">Monash University · Melbourne (Hybrid)</p>
+                        <ul>
+                            <li>Developed learning modules in neuroscience, bioinformatics and immunology.</li>
+                            <li>Applied adult-learning models and eLearning technology to improve accessibility and effectiveness.</li>
+                            <li>Partnered with lecturers and clinicians to create accurate, impactful content.</li>
+                        </ul>
+                        <button type="button" class="link-btn" data-open="4">Read case study →</button>
+                    </div>
+                </li>
+                <li class="tl-item tl-edu">
+                    <div class="tl-meta"><span class="tl-date">2016 – 2021</span></div>
+                    <div class="tl-body">
+                        <h3>PhD, Neuroscience &amp; Neurochemistry</h3>
+                        <p class="tl-org">University of Melbourne · The Florey Institute of Neuroscience and Mental Health</p>
+                        <ul>
+                            <li>Researched brain function and protein interactions using experimental and computational methods.</li>
+                            <li>Built the research, data analysis and science communication skills that underpin my evidence-based design practice.</li>
+                        </ul>
+                        <button type="button" class="link-btn" data-open="5">Read case study →</button>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ============ WORK / QUESTS ============ -->
+        <section class="section container" id="work" aria-labelledby="work-title">
+            <div class="section-head">
+                <p class="pixel-label">03 · Selected work</p>
+                <h2 id="work-title">Case studies &amp; micro-quests</h2>
+                <p class="section-intro">
+                    Open a case study to see the context, my role and my approach. Each one ends with an optional
+                    <strong>60-second micro-quest</strong> built on a real learning-science principle. Earn XP and complete all six
+                    to unlock my design notes. My contact details are always visible, no quest required.
+                </p>
+            </div>
+
+            <ol class="how-it-works" aria-label="How the quests work">
+                <li><span class="step" aria-hidden="true">1</span><div><strong>Explore</strong> a case study</div></li>
+                <li><span class="step" aria-hidden="true">2</span><div><strong>Answer</strong> a micro-quest and get instant feedback</div></li>
+                <li><span class="step" aria-hidden="true">3</span><div><strong>Earn XP</strong> and unlock the design notes</div></li>
+            </ol>
+
+            <ul class="work-grid" id="work-grid">
+                <li>
+                    <button type="button" class="work-card" data-open="0" aria-describedby="w0">
+                        <span class="work-media"><img class="pixel-art" src="assets/img/vu.svg" alt="" width="400" height="400" loading="lazy"></span>
+                        <span class="work-body">
+                            <span class="work-eyebrow">Quest 01 · Higher education</span>
+                            <span class="work-title">Victoria University</span>
+                            <span class="work-sub" id="w0">Assessment Refresh Project (ARP)</span>
+                            <span class="work-done"><span aria-hidden="true">✓ </span>Complete</span>
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="work-card" data-open="1" aria-describedby="w1">
+                        <span class="work-media"><img class="pixel-art" src="assets/img/neuroaiq.svg" alt="" width="400" height="400" loading="lazy"></span>
+                        <span class="work-body">
+                            <span class="work-eyebrow">Quest 02 · AI enablement</span>
+                            <span class="work-title">NeuroAIQ</span>
+                            <span class="work-sub" id="w1">AI adoption &amp; digital upskilling</span>
+                            <span class="work-done"><span aria-hidden="true">✓ </span>Complete</span>
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="work-card" data-open="2" aria-describedby="w2">
+                        <span class="work-media"><img class="pixel-art" src="assets/img/alcazar-400.webp" srcset="assets/img/alcazar-400.webp 400w, assets/img/alcazar-800.webp 800w" sizes="(max-width: 600px) 96px, (max-width: 1000px) 46vw, 340px" alt="" width="400" height="400" loading="lazy"></span>
+                        <span class="work-body">
+                            <span class="work-eyebrow">Quest 03 · Skills &amp; gamification</span>
+                            <span class="work-title">Alcazar Learning</span>
+                            <span class="work-sub" id="w2">Gamified professional-skills modules</span>
+                            <span class="work-done"><span aria-hidden="true">✓ </span>Complete</span>
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="work-card" data-open="3" aria-describedby="w3">
+                        <span class="work-media"><img class="pixel-art" src="assets/img/petermac-400.webp" srcset="assets/img/petermac-400.webp 400w, assets/img/petermac-800.webp 800w" sizes="(max-width: 600px) 96px, (max-width: 1000px) 46vw, 340px" alt="" width="400" height="400" loading="lazy"></span>
+                        <span class="work-body">
+                            <span class="work-eyebrow">Quest 04 · Medical education</span>
+                            <span class="work-title">Peter MacCallum Cancer Centre</span>
+                            <span class="work-sub" id="w3">Genomics education for clinicians</span>
+                            <span class="work-done"><span aria-hidden="true">✓ </span>Complete</span>
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="work-card" data-open="4" aria-describedby="w4">
+                        <span class="work-media"><img class="pixel-art" src="assets/img/monash-400.webp" srcset="assets/img/monash-400.webp 400w, assets/img/monash-800.webp 800w" sizes="(max-width: 600px) 96px, (max-width: 1000px) 46vw, 340px" alt="" width="400" height="400" loading="lazy"></span>
+                        <span class="work-body">
+                            <span class="work-eyebrow">Quest 05 · Health &amp; science</span>
+                            <span class="work-title">Monash University</span>
+                            <span class="work-sub" id="w4">Accessible online science modules</span>
+                            <span class="work-done"><span aria-hidden="true">✓ </span>Complete</span>
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="work-card" data-open="5" aria-describedby="w5">
+                        <span class="work-media"><img class="pixel-art" src="assets/img/florey-400.webp" srcset="assets/img/florey-400.webp 400w, assets/img/florey-800.webp 800w" sizes="(max-width: 600px) 96px, (max-width: 1000px) 46vw, 340px" alt="" width="400" height="400" loading="lazy"></span>
+                        <span class="work-body">
+                            <span class="work-eyebrow">Quest 06 · Research</span>
+                            <span class="work-title">The Florey Institute</span>
+                            <span class="work-sub" id="w5">PhD research in neuroscience</span>
+                            <span class="work-done"><span aria-hidden="true">✓ </span>Complete</span>
+                        </span>
+                    </button>
+                </li>
+            </ul>
+
+            <div class="unlock-card" id="unlock-card" hidden>
+                <p class="pixel-label">Achievement unlocked · Portfolio Explorer</p>
+                <h3>You just experienced my design approach</h3>
+                <p>Those six quests weren't just decoration. They quietly used the same principles I build into real programs:</p>
+                <ul class="unlock-list">
+                    <li><strong>Retrieval practice:</strong> answering a question strengthens memory more than rereading.</li>
+                    <li><strong>Immediate, explanatory feedback:</strong> every answer told you <em>why</em>, not just right or wrong.</li>
+                    <li><strong>Safe failure:</strong> you could retry with no penalty, which keeps you motivated.</li>
+                    <li><strong>Autonomy &amp; visible progress:</strong> you chose the order, and the XP bar showed your competence growing.</li>
+                    <li><strong>Chunking:</strong> short, focused challenges kept the cognitive load low.</li>
+                </ul>
+                <div class="hero-actions">
+                    <a href="mailto:r.tondfekr@gmail.com?subject=Hello%20from%20your%20portfolio" class="btn btn-primary">Let's design something together</a>
+                    <button type="button" class="btn btn-ghost" id="reset-progress">Reset quests</button>
                 </div>
             </div>
+        </section>
 
-            <div class="work-item pixel-border" onclick="openModal(2)" tabindex="0" role="button" aria-label="View The Florey Institute project details">
-                <img src="Florey.png" alt="The Florey Institute - Neuroscience Research platform" class="work-image">
-                <div class="work-info">
-                    <h3>The Florey Institute</h3>
-                    <p>Neuroscience Research</p>
+        <!-- ============ SKILLS ============ -->
+        <section class="section container" id="skills" aria-labelledby="skills-title">
+            <div class="section-head">
+                <p class="pixel-label">04 · Skills &amp; credentials</p>
+                <h2 id="skills-title">Toolkit</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="panel">
+                    <h3 class="panel-title">Key skills</h3>
+                    <ul class="chips">
+                        <li>Learning Experience Design (LXD)</li>
+                        <li>Instructional &amp; Curriculum Design</li>
+                        <li>Educational Technology</li>
+                        <li>AI in Education</li>
+                        <li>UX for Learning Programs</li>
+                        <li>Assessment Design</li>
+                        <li>Learning Outcome Mapping</li>
+                        <li>Gamification &amp; Engagement</li>
+                        <li>Animation &amp; Multimedia</li>
+                        <li>Adult Learning</li>
+                        <li>Creativity &amp; Innovation</li>
+                        <li>Communication &amp; Collaboration</li>
+                    </ul>
+                </div>
+                <div class="panel">
+                    <h3 class="panel-title">Certifications</h3>
+                    <ul class="cert-list">
+                        <li>Learning Experience Design (LXD)</li>
+                        <li>Google UX Design Specialization</li>
+                        <li>Learning Design Thinking</li>
+                        <li>eLearning Essentials: Instructional Design</li>
+                        <li>Career Essentials in Generative AI</li>
+                        <li>Artificial Intelligence in Education</li>
+                        <li>Extended Reality (XR)</li>
+                    </ul>
+                </div>
+                <div class="panel">
+                    <h3 class="panel-title">Education</h3>
+                    <div class="edu">
+                        <p class="edu-degree">PhD, Neuroscience &amp; Neurochemistry</p>
+                        <p class="edu-org">University of Melbourne</p>
+                        <p class="edu-date">2016 – 2021</p>
+                    </div>
+                    <h3 class="panel-title panel-title-sub">Sectors</h3>
+                    <ul class="chips chips-quiet">
+                        <li>Higher education</li>
+                        <li>Health &amp; medical</li>
+                        <li>Professional skills</li>
+                        <li>AI &amp; digital transformation</li>
+                        <li>Research</li>
+                    </ul>
                 </div>
             </div>
+        </section>
 
-            <div class="work-item pixel-border" onclick="openModal(3)" tabindex="0" role="button" aria-label="View Monash University project details">
-                <img src="Monash.png" alt="Monash University - Health & Science Education platform" class="work-image">
-                <div class="work-info">
-                    <h3>Monash University</h3>
-                    <p>Health & Science Education</p>
+        <!-- ============ CONTACT ============ -->
+        <section class="section container" id="contact" aria-labelledby="contact-title">
+            <div class="contact-card">
+                <div>
+                    <p class="pixel-label">05 · Contact</p>
+                    <h2 id="contact-title">Let's build learning people remember</h2>
+                    <p>Do you have a course, assessment or AI-enablement challenge? I'm always happy to talk about learning design, EdTech and collaboration.</p>
+                </div>
+                <div class="contact-actions">
+                    <a href="mailto:r.tondfekr@gmail.com" class="btn btn-primary">
+                        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path d="M1 3h14v10H1zM3 5v1h1v1h1v1h1v1h4V8h1V7h1V6h1V5h-1v1h-1v1h-1v1H6V7H5V6H4V5zM3 7v4h10V7h-1v1h-1v1h-1v1H6V9H5V8H4V7z"/></svg>
+                        r.tondfekr@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/reza-tondfekr" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path d="M1 1h14v14H1zM3 6v7h2V6zM3 3v2h2V3zM7 6v7h2V9h1V8h1v5h2V8h-1V7h-1V6h-2v1H9V6z"/></svg>
+                        LinkedIn<span class="visually-hidden"> (opens in a new tab)</span>
+                    </a>
+                    <a href="assets/Reza_Tondfekr_CV.pdf" class="btn btn-ghost" download>
+                        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path d="M7 1h2v8h2v-1h1v1h-1v1h-1v1H9v1H7v-1H6v-1H5V9H4V8h1v1h2zM1 12h2v2h10v-2h2v4H1z"/></svg>
+                        Download CV (PDF)
+                    </a>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
 
-    <!-- Modal -->
-    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="modal-content pixel-border">
-            <button class="close-btn" onclick="closeModal()" aria-label="Close modal">&times;</button>
-            <div id="modalContent">
-                <!-- Content will be inserted here by JavaScript -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer pixel-border" role="contentinfo">
-        <div class="footer-content">
-            <div class="footer-main">
-                <div class="footer-name">Reza Tondfekr</div>
-                <div class="footer-tagline">🧠 Neuroscience, Technology & Education integrated for real learning impact</div>
-            </div>
-            <div class="footer-contact">
-                <a href="mailto:r.tondfekr@gmail.com" class="footer-email" aria-label="Send email to Reza Tondfekr">📧 Email</a>
-                <a href="https://www.linkedin.com/in/reza-tondfekr" target="_blank" class="footer-linkedin" aria-label="Visit Reza Tondfekr's LinkedIn profile">💼 LinkedIn</a>
-            </div>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p><strong>Reza Tondfekr</strong>, where neuroscience, technology and education meet for real learning impact.</p>
+            <p class="footer-meta">Melbourne, Australia · <a href="#top">Back to top ↑</a></p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- ============ CASE STUDY DIALOG ============ -->
+    <dialog class="modal" id="project-modal" aria-labelledby="modal-title">
+        <div class="modal-inner">
+            <button type="button" class="icon-btn modal-close" id="modal-close" aria-label="Close case study">
+                <svg class="icon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path d="M2 2h2v1h1v1h1v1h1v1h2V5h1V4h1V3h1V2h2v2h-1v1h-1v1h-1v1H9v2h1v1h1v1h1v1h1v2h-2v-1h-1v-1H9v-1H7v1H6v1H5v1H4v1H2v-2h1v-1h1v-1h1v-1h1V9h1V7H6V6H5V5H4V4H3V3H2z"/></svg>
+            </button>
+            <div id="modal-content"></div>
+        </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/script.js" defer></script>
 </body>
 </html>
